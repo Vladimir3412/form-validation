@@ -1,0 +1,129 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Cascadia+Mono:ital,wght@0,200..700;1,200..700&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Open Sans', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(to right, #c5a2ba, #bd99f7 );
+}
+.validation-block {
+  position: relative;
+    flex: 0 1 400px;
+    background: white;
+    padding: 25px 25px 15px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.validation-block__title{
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 20px;
+
+}
+
+.validation-block__item {
+    margin-bottom: 20px;
+}
+
+.validation-block__input{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    font-size: 16px;
+    outline: none;
+    margin-bottom: 13px;
+}
+
+.validation-block__progress-bar{
+    height: 8px;
+    background: rgb(228, 227, 227);
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.validation-block__progress-bar span {
+    display: block;
+    height: 100%;
+    width: 0%;
+    background: red;
+    transition: width 0.3s ease;
+}
+   
+.validationBlockCriteria {
+    display: flex;
+    flex-direction: column; /* вертикально */
+    gap: 6px; /* промежуток между элементами */
+    padding-left: 0; /* убираем отступ слева */
+    margin-top: 10px;
+    color: rgb(114, 114, 114);
+
+}
+
+
+
+.validationBlockCriteria li {
+    display: flex;
+    align-items: center; /* выравнивание текста и иконки по центру */
+    list-style-type: none; /* убираем точки */
+    font-size: 14px;
+    /* color: rgb(114, 114, 114); */
+}
+
+.validationBlockCriteria li::before {
+    content: ""; 
+    display: inline-block;
+    margin-right: 8px;
+    width: 15px; /* ширина иконки */
+    height: 15px; /* высота иконки */
+    border: 1px solid gray;
+    border-radius: 50%; /* делаем иконку круглой */
+    background-position: center;
+    background-size: 10px 10px; /* размер иконки */
+    background-repeat: no-repeat;
+    transition: all 0.3s; /* плавный переход при изменении */
+}
+
+.validationBlockCriteria li.valid::before {
+    background-color: #4CAF50;
+    border: 1px solid #4CAF50;
+    width: 15px; /* ширина иконки */
+    height: 15px; /* высота иконки */
+    background-size: contain;
+ background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4 12.6111L8.92308 17.5L20 6.5' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");}
+.validationBlockCriteria.valid{
+    font-weight: 600; /* жирный текст для валидных критериев */
+}
+
+.validationBlockCriteria:not(:last-child) {
+    margin-bottom:10px;
+}
+
+
+
+
+.eye {
+    position: absolute;
+    right: 40px;
+    top: 40%;
+    transform: translateY(-50%);
+    cursor: pointer;
+ width: 24px;
+  height: 24px;
+}
+
+.closeeye {
+    display: none;
+}
